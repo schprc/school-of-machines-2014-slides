@@ -205,13 +205,18 @@
                     <section>
                         <h3>Game Engines</h3>
                         <ul>
-                            <li><a href="http://unity3d.com/">Unity</a></li>
+                            <li><a href="http://unity3d.com/">Unity 3D</a></li>
+                            <li><a href="http://wiki.blender.org/index.php/Doc:2.6/Manual/Game_Engine">Blender Game Engine</a></li>
+                            <li><a href="https://www.unrealengine.com">Unreal Game Engine</a></li>
                         </ul>
                     </section>
                     <section>
                         <h3>Frame-based animation</h3>
                         <ul>
                             <li><a href="http://www.adobe.com/products/aftereffects.html">Adobe After Effects</a></li>
+                            <li><a href="http://www.openshot.org">Open Shot Video Editor</a></li>
+                            <li><a href="http://www.pencil-animation.org">Pencil</a></li>
+
                         </ul>
                     </section>
                 </section> <!-- /Tools -->
@@ -306,20 +311,26 @@
                     { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
                 ]
             });
-    
-            Reveal.addEventListener('show-overlay', function() {
-                showOverlay();
-            });
 
-            Reveal.addEventListener('hide-overlay', function() {
-                hideOverlay();
-            });
+            Reveal.addEventListener( 'ready', function( event ) {
+                if ( event.indexh == 0 ) {
+                    removeOverlayAnimationClasses();
+                    $('.overlay').addClass('initially-hidden');
+                    $('.slideshow-url').removeClass('initially-hidden');
+                } else {
+                    showOverlay();
+                }
+            } );
 
-            $(document).ready( function(){
-                removeOverlayAnimationClasses();
-                $('.overlay').addClass('initially-hidden');
-                $('.slideshow-url').removeClass('initially-hidden');
-            });
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+                if ( event.indexh == 0 ) {
+                    hideOverlay();
+                } else {
+                    if ( !$('overlay').hasClass('fadein-ani') ) {
+                        showOverlay();
+                    }
+                }
+            } );
 
             var showOverlay = function() {
                 removeOverlayAnimationClasses();

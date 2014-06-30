@@ -8,6 +8,7 @@
 	letter-spacing: 1px;
 	-webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
+    opacity: 0;
 }
 
 .slideshow-title {
@@ -25,6 +26,7 @@
 .slideshow-url {
 	bottom: 20px;
 	left: 20px;
+	opacity: 1;
 }
 
 .overlay a {
