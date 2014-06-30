@@ -106,3 +106,23 @@
 .reveal table tr:last-child td {
 	border-bottom: none; 
 }
+
+.list-number {
+	border: 5px solid rgb(19, 218, 236) !important;
+	margin: auto 0;
+	margin-right: 10px !important;
+    display: inline-block;
+    vertical-align: middle;
+	width: 70px;
+	height: 70px;
+	line-height: 70px !important;
+	border-radius: 40px;
+}
+
+.list-number:after {
+  content:"";
+  display: inline-block;
+  width: 1px solid transparent;
+  height: 100%;
+  vertical-align: middle;
+}
