@@ -35,3 +35,51 @@
 .overlay a:hover {
 	color: rgb(63, 225, 240);text-decoration: none;
 }
+
+.initially-hidden {
+	opacity: 0;
+}
+
+/*
+	Fade out animation classes
+*/
+
+.fadeout-ani {
+	-webkit-animation: fadeout-ani 0.5s; /* Chrome, Safari, Opera */
+    animation: fadeout-ani 0.5s;
+    opacity: 0;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes fadeout-ani {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+/* Standard syntax */
+@keyframes fadeout-ani {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+/*
+	Fade in animation classes
+*/
+
+.fadein-ani {
+	-webkit-animation: fadein-ani 0.5s; /* Chrome, Safari, Opera */
+    animation: fadein-ani 0.5s;
+    opacity: 1;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes fadein-ani {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Standard syntax */
+@keyframes fadein-ani {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

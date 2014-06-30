@@ -33,13 +33,13 @@
     <body>
         <div class="reveal">
             <div class="slides">
-                <section>
+                <section data-state="hide-overlay">
                     <h1>Projection Mapping on Spatial Objects</h1>
                     <h2>Workshop / <a href="http://schoolofma.org/">School of Machines 2014</a></h2>
                     <p>by <a href="http://rijnieks.lv">Krisjanis Rijnieks</a> and <a href="http://irina.spicaka.info">Irina Spicaka</a></p>
                 </section>
 
-                <section class="stack">
+                <section class="stack" data-state="show-overlay">
                     <section>
                         <h2>What we do and who we are?</h2>
                         <p>
@@ -276,6 +276,7 @@
             <a href="http://ej.uz/machines" title="School of Machines - Projection Mapping on Spatial Objects">http://ej.uz/machines</a>
         </div>
 
+        <script src="js/jquery.min.js"></script>
         <script src="lib/js/head.min.js"></script>
         <script src="js/reveal.min.js"></script>
 
@@ -306,6 +307,46 @@
                     { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
                 ]
             });
+    
+            Reveal.addEventListener('show-overlay', function() {
+                showOverlay();
+            });
+
+            Reveal.addEventListener('hide-overlay', function() {
+                hideOverlay();
+            });
+
+            $(document).ready( function(){
+                removeOverlayAnimationClasses();
+                $('.overlay').addClass('initially-hidden');
+                $('.slideshow-url').removeClass('initially-hidden');
+            });
+
+            var showOverlay = function() {
+                removeOverlayAnimationClasses();
+                $('.overlay').addClass('fadein-ani');
+                $('.slideshow-url').removeClass('fadein-ani');
+            }      
+
+            var hideOverlay = function() {
+                removeOverlayAnimationClasses();
+                $('.overlay').addClass('fadeout-ani');
+                $('.slideshow-url').removeClass('fadeout-ani');
+            }
+
+            var removeOverlayAnimationClasses = function() {
+                if ( $('.overlay').hasClass('fadein-ani') ) {
+                    $('.overlay').removeClass('fadein-ani');
+                }
+
+                if ( $('.overlay').hasClass('hadeout-ani') ) {
+                    $('.overlay').removeClass('fadein-ani');
+                }
+
+                if ( $('.overlay').hasClass('initially-hidden') ) {
+                    $('.overlay').removeClass('initially-hidden');
+                }
+            }
 
         </script>
     </body>
