@@ -1,0 +1,37 @@
+.overlay {
+	position: absolute;
+	z-index: 100;
+	font-size: 16px;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	color: rgb(175, 175, 175);
+	font-weight: normal;
+	letter-spacing: 1px;
+	-webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+.slideshow-title {
+	left: 20px;
+	top: 20px;
+	line-height: 1.2;
+}
+
+.slideshow-byline {
+	top: 20px;
+	right: 20px;
+	text-align: right;
+}
+
+.slideshow-url {
+	bottom: 20px;
+	left: 20px;
+}
+
+.overlay a {
+	color: rgb(19, 218, 236);
+	text-decoration: none;
+}
+
+.overlay a:hover {
+	color: rgb(63, 225, 240);text-decoration: none;
+}
