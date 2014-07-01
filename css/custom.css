@@ -120,9 +120,9 @@
 }
 
 .list-number:after {
-  content:"";
-  display: inline-block;
-  width: 1px solid transparent;
-  height: 100%;
-  vertical-align: middle;
+	content:"";
+	display: inline-block;
+	width: 1px solid transparent;
+	height: 100%;
+	vertical-align: middle;
 }
